@@ -5,6 +5,7 @@ import Lib
 results :: [String]
 results = [ euler1
           , euler2
+          , euler3
           ]
 
 main :: IO ()
