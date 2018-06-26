@@ -1,14 +1,17 @@
-module Lib
-  ( euler1
-  , euler2
-  , euler3
-  , euler4
-  , euler5
-  , euler6
-  ) where
+module Lib ( results ) where
 
 import Data.List (sort, find)
 import Data.Maybe (fromMaybe, isJust)
+
+results :: [String]
+results = [ euler1
+          , euler2
+          , euler3
+          , euler4
+          , euler5
+          , euler6
+          , euler7
+          ]
 
 -- https://projecteuler.net/problem=1
 euler1 :: String
@@ -72,3 +75,9 @@ euler6 = show result where
   range = [1..100]
   sqOfSum = (sum range) ^ 2
   sumOfSq = sum $ map (\x -> x ^ 2) range
+
+
+-- https://projecteuler.net/problem=7
+euler7 :: String
+euler7 = show result where
+  result = primes !! 10000

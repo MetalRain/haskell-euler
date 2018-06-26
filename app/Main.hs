@@ -2,14 +2,9 @@ module Main where
 
 import Lib
 
-results :: [String]
-results = [ euler1
-          , euler2
-          , euler3
-          , euler4
-          , euler5
-          , euler6
-          ]
+concatResults :: [(Int, String)] -> String
+concatResults rs = foldr (++) "" lines where
+  lines = map (\(i, r) -> "Euler " ++ show i ++ ": " ++ r ++ "\n") rs
 
 main :: IO ()
-main = putStrLn $ foldr (\acc res -> acc ++ "\n" ++ res) "" results
+main = putStrLn $ concatResults $ zip [1..] results
