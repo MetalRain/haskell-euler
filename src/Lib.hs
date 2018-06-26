@@ -3,6 +3,7 @@ module Lib
   , euler2
   , euler3
   , euler4
+  , euler5
   ) where
 
 import Data.List (sort, find)
@@ -52,3 +53,12 @@ euler4 = show result where
   result = head [ x * y | x <- range
                         , y <- range
                         , isPalindrome $ show (x * y) ]
+
+
+-- https://projecteuler.net/problem=5
+isEvenlyDivisibleUpTo :: Int -> Int -> Bool
+isEvenlyDivisibleUpTo n x = not $ any (\a -> x `mod` a /= 0) [1..n]
+
+euler5 :: String
+euler5 = show result where
+  result = head $ filter (isEvenlyDivisibleUpTo 20) [19*18..]
