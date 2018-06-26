@@ -4,6 +4,7 @@ module Lib
   , euler3
   , euler4
   , euler5
+  , euler6
   ) where
 
 import Data.List (sort, find)
@@ -62,3 +63,12 @@ isEvenlyDivisibleUpTo n x = not $ any (\a -> x `mod` a /= 0) [1..n]
 euler5 :: String
 euler5 = show result where
   result = head $ filter (isEvenlyDivisibleUpTo 20) [19*18..]
+
+
+-- https://projecteuler.net/problem=6
+euler6 :: String
+euler6 = show result where
+  result = sqOfSum - sumOfSq
+  range = [1..100]
+  sqOfSum = (sum range) ^ 2
+  sumOfSq = sum $ map (\x -> x ^ 2) range

@@ -8,6 +8,7 @@ results = [ euler1
           , euler3
           , euler4
           , euler5
+          , euler6
           ]
 
 main :: IO ()
