@@ -12,6 +12,7 @@ results = [ euler1
           , euler6
           , euler7
           , euler8
+          , euler9
           ]
 
 -- https://projecteuler.net/problem=1
@@ -114,3 +115,13 @@ euler8 = show result where
   sums = map (\xs -> foldr (*) 1 xs) slices
   slices = slidingWindow 13 numbers
   numbers = (map (\c -> read [c] :: Int) euler8Num)
+
+
+-- https://projecteuler.net/problem=9
+euler9 :: String
+euler9 = show result where
+  result = head [ a * b * c | a <- [1..1000 - 2]
+                            , b <- [1..1000 - a - 1]
+                            , let c = 1000 - a - b
+                            , (a ^ 2) + (b ^ 2) == c ^ 2
+                            ]
