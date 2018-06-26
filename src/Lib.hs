@@ -2,6 +2,7 @@ module Lib
   ( euler1
   , euler2
   , euler3
+  , euler4
   ) where
 
 import Data.List (sort, find)
@@ -38,3 +39,16 @@ factorsOf x = factors where
 euler3 :: String
 euler3 = show result where
   result = head $ reverse $ factorsOf 600851475143
+
+
+
+-- https://projecteuler.net/problem=4
+isPalindrome :: String -> Bool
+isPalindrome s = reverse s == s
+
+euler4 :: String
+euler4 = show result where
+  range = reverse [900..999]
+  result = head [ x * y | x <- range
+                        , y <- range
+                        , isPalindrome $ show (x * y) ]
